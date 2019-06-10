@@ -7,6 +7,7 @@ const path = require('path');
 const history = require('connect-history-api-fallback');
 
 const authRoutes = require('./auth/routes');
+const userRoutes = require('./users/routes');
 
 module.exports = (db, passport, rabbit) => {
     const app = express();
@@ -26,13 +27,13 @@ module.exports = (db, passport, rabbit) => {
         app.use(cors());
     }
 
-    // const auth = passport.authenticate('jwt', {
-    //     session: false
-    // });
+    const auth = passport.authenticate('jwt', {
+        session: false
+    });
 
     // routes
     authRoutes(app, passport);
-    // routes(app, db, auth);
+    userRoutes(app, auth);
 
     app.use(history());
 

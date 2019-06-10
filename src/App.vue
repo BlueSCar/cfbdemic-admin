@@ -19,6 +19,10 @@
 
 <style lang="scss">
 
+    body {
+        background: #dedede;
+    }
+
     .spinner-container {
         margin-top: 4em;
     }
