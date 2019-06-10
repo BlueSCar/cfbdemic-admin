@@ -1,0 +1,12 @@
+node_modules
+dist/*.jpg
+dist/*.png
+dist/*.js
+dist/*.css
+dist/*.map
+dist/*.xml
+dist/*.manifest
+.git
+.gitignore
+Dockerfile
+.dockerignore
