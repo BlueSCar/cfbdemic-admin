@@ -7,7 +7,7 @@ const cookieExtractor = (req) => { // eslint-disable-line
 module.exports = (passport) => {
     passport.use(new JWTStrategy({
         secretOrKey: process.env.JWT_SECRET,
-        issuer: 'vue-express-template',
+        issuer: 'CFBDemic Allies',
         jwtFromRequest: cookieExtractor,
         passReqToCallback: true
     }, async (req, payload, done) => {
@@ -15,7 +15,7 @@ module.exports = (passport) => {
             done(null, {
                 iat: payload.iat,
                 id: payload.id,
-                username: payload.username
+                name: payload.name
             });
         } catch (err) {
             done(err, null);

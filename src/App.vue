@@ -1,7 +1,7 @@
 <template>
     <div id="app">
-        <navigation></navigation>
-        <router-view />
+        <navigation :profile='profile'></navigation>
+        <router-view :profile='profile' :is-loading='isLoading' />
     </div>
 </template>
 
@@ -11,6 +11,25 @@
     export default {
         components: {
             Navigation
+        },
+        data() {
+            return {
+                profile: null,
+                isLoading: false
+            };
+        },
+        created() {
+            this.isLoading = true;
+            this.$axios.get('/api/me').then((result) => {
+                this.profile = result.data;
+                this.isLoading = false;
+            }).catch(() => {
+                this.profile = null;
+                this.isLoading = false;
+            })
+            .finally(() => {
+                this.isLoading = false;
+            });
         }
     };
 
