@@ -1,0 +1,52 @@
+to do:
+-define regions
+  -create generic region object
+    properties:
+      -name
+      -bordering regions
+        -current border strength
+      -current population
+      -list of disease objects
+      per disease
+        -population infected
+        -population contagious
+        -population zombified
+      -list of researchers in regions
+      -FUTURE: image and location for placement on map?
+    methods:
+      -print stats about regions
+-define diseases
+  properties:
+    -name
+    -transmission rate
+    -incubation
+    -time for each progression (1 day for infected -> contagious, 2 days for contagious -> zombified, etc.)
+-define researchers
+  properties:
+    -name
+    -location
+    -team
+    -infected status
+    -chosen action
+-define tech trees
+  properties:
+    -name
+    -status
+    -choices
+    -bonuses
+    -team
+    -users
+    -count for tech trees
+    -modifications thanks to tech trees
+  methods:
+    -update status
+-define country
+  properties:
+    -list of territory objects
+    -list of tech trees
+  methods:
+    -simulate a day
+      -first, parse all users
+      -go through list of users and apply actions to users, npcs, regions
+      -update tech trees as neccesary
+      -move users around as neccesary
