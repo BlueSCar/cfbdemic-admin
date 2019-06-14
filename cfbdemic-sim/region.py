@@ -1,11 +1,12 @@
+import SIRModel
 
-#population_dict structure
-#population_dict = [{"status":disease_obj,"affected_pop":100000},...]
+#borders_dict = {}
 
 class Region:
-    def __init__(self, name, bordering_names, population_dict, researchers_list):
+    def __init__(self, name, borders, sir_model, researchers_list):
         self.name = name
-        self.bordering_names = bordering_names
-        self.population = population_dict
-        self.total_population = sum([population["affected_pop"] for population in population_dict])
-        #self.healthy_population =
+        self.borders = borders
+        self.model = sir_model
+        self.population = sir_model.population
+
+    def sim_days():
