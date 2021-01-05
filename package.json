@@ -19,7 +19,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.5",
     "@saeris/vue-spinners": "^1.0.8",
     "amqplib": "^0.5.3",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
     "bootstrap-vue": "^2.0.0-rc.13",
